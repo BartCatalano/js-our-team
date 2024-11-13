@@ -41,20 +41,22 @@ const teamMembers = [
 const cardEmpty = document.getElementById("card-empty");
 
 // IMPOSTO LA FUNZIONE GENERICA CHE CREA LE CARD
-function cardCreator(member) {
+ function cardCreator(member) {
   const {name, role, email, img} = member;
-  return `
-    <div class="card" style="width: 18rem; margin: 10px;">
-      <img src="${img}" class="card-img-top" alt="${name}">
-      <div class="card-body">
-        <h5 class="card-title">${name}</h5>
-        <p class="card-text">${role}</p>
-        <p class="card-text">${email}</p>
-      </div>
-    </div>
-  `;
+   return `
+  <img src="${img}" class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">${name}</h5>
+                  <p class="card-text">${role}</p>
+                  <p class="card-text">${email}</p>
+                  </div>
+                  </div>
+                  
+   `;
 
-};
+ };
 
 // FACCIO CICLO FOR CHE MI PRENDE TUTTI GLI OGGETTI NELL ARRAY
 
