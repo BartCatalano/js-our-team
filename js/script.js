@@ -36,4 +36,43 @@ const teamMembers = [
     img: "img/female3.png"
   }
 ];
-console.log(teamMembers);
+
+// PRENDO LA CARD DA HTML
+const cardEmpty = document.getElementById("card-empty");
+
+// IMPOSTO LA FUNZIONE GENERICA CHE CREA LE CARD
+function cardCreator(member) {
+  const {name, role, email, img} = member;
+  return `
+    <div class="card" style="width: 18rem; margin: 10px;">
+      <img src="${img}" class="card-img-top" alt="${name}">
+      <div class="card-body">
+        <h5 class="card-title">${name}</h5>
+        <p class="card-text">${role}</p>
+        <p class="card-text">${email}</p>
+      </div>
+    </div>
+  `;
+
+};
+
+// FACCIO CICLO FOR CHE MI PRENDE TUTTI GLI OGGETTI NELL ARRAY
+
+let items ="";
+for (let i = 0; i < teamMembers.length; i++ ){
+  const curMember = teamMembers[i];
+    items += cardCreator(curMember); 
+      
+};
+ 
+// invio gli elementi nelle card create
+
+cardEmpty.innerHTML = items;
+
+
+
+
+
+
+
+
